@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID | PROJECT</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <div class="hero">
+
+                <h2 class="heading">VN BlackPool Shop</h2>
+                <p class="subHeading">BlackPool & VN</p>
+
+            </div> <!-- Hero -->
+
+            <div class="features feature1">
+                <h4 class="price">IDR 250K</h4>
+                <p class="item">Hoodie</p>
+            </div> <!--Feature1-->
+            <div class="features feature2">
+                <h4 class="price">IDR 150K</h4>
+                <p>T-Shirt</p>
+            </div> <!--Feature2-->
+        </header>
+
+        <nav class="menu">
+            <div class="menuToggle">
+                <input type="checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> <!--Menu Toogle-->
+
+            <div class="brand"><h1>VN BLACKPOOL</h1></div>
+            <ul class="menuList">
+                <li> <a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Gallery</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="services">
+            <div class="service">
+                <div class="icon">📦</div>
+                <h3>Shop</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat dicta velit expedita, voluptatum mollitia.</p>
+            </div> <!--Service-->
+            <div class="service">
+                <div class="icon">🎬</div>
+                <h3>Film & Movie</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat dicta velit expedita, voluptatum mollitia.</p>
+            </div> <!--Service-->
+            <div class="service">
+                <div class="icon">💲</div>
+                <h3>Adsense</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat dicta velit expedita, voluptatum mollitia.</p>
+            </div> <!--Service-->
+            <div class="service">
+                <div class="icon">🕴</div>
+                <h3>Fansbase</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae fugiat dicta velit expedita, voluptatum mollitia.</p>
+            </div> <!--Service-->
+        </section>
+
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <img src="assets/img/4.jpg">
+            <img src="assets/img/5.jpg">
+            <img src="assets/img/6.jpg">
+            <img src="assets/img/7.jpg">
+            <img src="assets/img/8.jpg">
+            <img src="assets/img/9.jpg">
+        </section> <!--Gallery-->
+
+    </div>    <!-- Container -->
+
+
+
+    <script>
+        const menuToggle = document.querySelector('.menuToggle');
+        const nav = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });
+    </script>
+</body>
+</html>

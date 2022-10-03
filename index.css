@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #ddd;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 50px;
+
+}
+/* CONTAINER */
+
+.container{
+    display: grid;
+    gap: 10px;
+}
+/* -------- HEADER ----------- */
+.header {
+    color: white;
+    display: grid;
+    grid-template-areas: 
+    'hero hero feature1'
+    'hero hero feature2';
+
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.hero {
+    grid-area: hero;
+    min-width: 300px;
+    background-image: url(assets/img/1.jpg);
+    background-size: cover;
+    background-position: center;  
+    height: 350px;  
+    padding: 40px;
+}
+
+.hero > * {
+    display: none;
+}
+
+.features {
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.feature1 {
+    grid-area: feature1;
+    background-image: url(assets/img/2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.feature2 {
+    grid-area: feature2;
+    background-image: url("assets/img/3.png");
+    background-position: center;
+    background-size: cover;
+}
+
+.feature1:hover  {
+    transform: scale(1.08);
+    border: 2px solid white;
+}
+.feature2:hover  {
+    transform: scale(1.08);
+    border: 2px solid white;
+
+}
+.features .price {
+    font-size: 3em;
+}
+
+/* ----------------NAV-------------- */
+
+.menu {
+    order: -1;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    background-color: rgb(99, 10, 10);
+}
+
+.menu .brand {
+    font-size: 1.3em;
+    color: #333;
+    color: white;
+}
+
+.menu ul{
+    display: grid;
+    list-style: none;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5px;
+}
+
+.menu a {
+    display: grid;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: #333;
+    padding: 5px;
+    box-shadow: rgb(252, 241, 241);
+}
+
+.menu a:hover{
+    background-color:rgb(255, 250, 250);
+    color: #333;
+
+    transition: 0.5s;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+}
+
+/* HAMBURGER MENU */
+.menuToggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.menuToggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: rgb(240, 240, 240);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+.menuToggle input {
+    display: block;
+    position: absolute;
+    background: black;
+    width: 40px;
+    height: 28px;
+    left: -5px;
+    top: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* Hamburger Animation */
+
+.menuToggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menuToggle span:nth-child(4){
+    transform-origin: 0 100%;
+}
+
+.menuToggle input:checked ~ span:nth-child(2){
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menuToggle input:checked ~ span:nth-child(4){
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menuToggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* --------- SERVICES ------------- */
+
+.services{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background-color: antiquewhite;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.service:hover {
+    transition: 0.5s;
+    background-color: #aaa;
+    border: 1px solid antiquewhite;
+    box-shadow: rgba(0, 0, 0, 0.4);
+}
+
+.service .icon {
+    font-size: 3em;
+}
+
+.service h3 {
+    font-size: 1.5em;
+}
+
+.service p {
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 0.8em;
+}
+
+/* ----- GALLERY ----------- */
+
+.gallery {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-content: space-evenly;
+    transition: 0.2s;
+}
+
+.gallery img {
+    border: 1px solid #aaa;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.gallery img:hover {
+    transform: scale(1.08);
+    border: 2px solid white;
+}
+
+.gallery h2 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --------- RESPONSIVE------------ */
+
+@media screen and (max-width: 1024px ){
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr;
+    } 
+
+    .menu .brand {
+        display: none;
+    }
+    
+    .hero > * {
+        display: block;
+    } 
+}
+
+@media screen and (max-width: 768px ){
+    .menu {
+        order: -1;
+        justify-items: end;
+        display: flex;
+        transition: 0s;
+    }
+
+    .menu a{
+        background-color: transparent;
+    }
+
+    .menu a:hover {
+        border-bottom: 5px solid white;
+        font-weight: bold;
+        background-color: transparent;
+        color: white;
+        } 
+
+    .menuToggle{
+        display: flex;
+    } 
+
+    .menu ul{
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        background-color: rgb(248, 38, 38);
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 1;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .menu ul.slide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width:600px) { 
+    .header {
+        grid-template-areas: 
+        'hero'
+        'feature1'
+        'feature2';
+    }   
+
+    .menu a{
+        background-color: transparent;
+    } 
+
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    body {
+        margin: 5px;
+    }
+
+    .container {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width:290px) {
+    body {
+        margin: 0px;
+    }
+}
